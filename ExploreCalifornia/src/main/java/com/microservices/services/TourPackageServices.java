@@ -38,7 +38,7 @@ public class TourPackageServices {
 	 * @return the tour package
 	 */
 	// creating the tour package hereby
-	public TourPackage createTourPackage(Integer code, String name) {
+	public TourPackage createTourPackage(String code, String name) {
 		if (!tourPackageRepo.exists(code)) {
 			tourPackageRepo.save(new TourPackage(code, name));
 		}
@@ -51,7 +51,7 @@ public class TourPackageServices {
 	 * @return the iterable
 	 */
 	// return all the tourPackage hereby
-	public Iterable<TourPackage> lookUpAll() {
+	public Iterable<TourPackage> lookUpPackages() {
 		return tourPackageRepo.findAll();
 	}
 

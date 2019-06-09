@@ -42,14 +42,13 @@ public class TourServices {
 	/**
 	 * Instantiates a new tour services.
 	 */
-	protected TourServices() {
+	public TourServices() {
 		super();
 	}
 
 	/**
 	 * Creates the tour.
 	 *
-	 * @param tourId          the tour id
 	 * @param tourTitle       the tour title
 	 * @param tourDesc        the tour desc
 	 * @param tourBlurb       the tour blurb
@@ -62,15 +61,15 @@ public class TourServices {
 	 * @param tourRegion      the tour region
 	 * @return the tour
 	 */
-	public Tour createTour(Integer tourId, String tourTitle, String tourDesc, String tourBlurb, Double tourPrice,
-			Float tourDuration, String tourBullets, String tourKeywords, Integer tourPackageCode,
-			Difficulty tourDifficulty, Region tourRegion) {
-		TourPackage tourPackage = tourPackageRepo.findOne(tourPackageCode);
+	public Tour createTour(String tourTitle, String tourDesc, String tourBlurb, Double tourPrice, String tourDuration,
+			String tourBullets, String tourKeywords, String tourPackageName, Difficulty tourDifficulty,
+			Region tourRegion) {
+		TourPackage tourPackage = tourPackageRepo.findByName(tourPackageName);
 		if (tourPackage == null) {
-			throw new RuntimeException("The TourPackage doesn't exists: " + tourPackageCode);
+			throw new RuntimeException("The TourPackage doesn't exists: " + tourPackageName);
 		}
-		return tourRepo.save(new Tour(tourId, tourTitle, tourDesc, tourBlurb, tourPrice, tourDuration, tourBullets,
-				tourKeywords, tourPackageCode, tourPackage, tourDifficulty, tourRegion));
+		return tourRepo.save(new Tour(tourTitle, tourDesc, tourBlurb, tourPrice, tourDuration, tourBullets,
+				tourKeywords, tourPackageName, tourPackage, tourDifficulty, tourRegion));
 
 	}
 

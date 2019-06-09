@@ -7,8 +7,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -25,8 +23,7 @@ public class TourPackage implements Serializable {
 
 	/** The package code. */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer tourPackageCode;
+	private String tourPackageCode;
 
 	/** The package name. */
 	@Column(name = "name")
@@ -38,7 +35,7 @@ public class TourPackage implements Serializable {
 	 * @param packageCode the package code
 	 * @param packageName the package name
 	 */
-	public TourPackage(Integer tourPackageCode, String packageName) {
+	public TourPackage(String tourPackageCode, String packageName) {
 		super();
 		this.tourPackageCode = tourPackageCode;
 		this.packageName = packageName;

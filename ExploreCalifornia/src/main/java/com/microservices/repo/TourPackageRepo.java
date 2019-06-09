@@ -10,9 +10,9 @@ import com.microservices.entity.TourPackage;
 /**
  * The Interface TourPackageRepo.
  */
-public interface TourPackageRepo extends CrudRepository<TourPackage, Integer> {
+public interface TourPackageRepo extends CrudRepository<TourPackage, String> {
 
-	@Override
-	TourPackage findOne(Integer tourPackageCode);
+	// create a method here to findByName for the PackageName in Json
+	TourPackage findByName(String name);
 
 }

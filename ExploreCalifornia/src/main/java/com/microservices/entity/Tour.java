@@ -4,7 +4,6 @@
 package com.microservices.entity;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,7 +47,7 @@ public class Tour implements Serializable {
 
 	/** The tour duration. */
 	@Column(name = "duration")
-	private Float tourDuration;
+	private String tourDuration;
 
 	/** The tour bullets. */
 	@Column(name = "bullets", length = 2000)
@@ -60,7 +59,7 @@ public class Tour implements Serializable {
 
 	/** The tour package code. */
 	@Column(name = "packageCode")
-	private Integer tourPackageCode;
+	private String tourPackageCode;
 
 	/** The tour package. */
 	@ManyToOne
@@ -90,11 +89,10 @@ public class Tour implements Serializable {
 	 * @param tourDifficulty  the tour difficulty
 	 * @param tourRegion      the tour region
 	 */
-	public Tour(Integer tourId, String tourTitle, String tourDesc, String tourBlurb, Double tourPrice,
-			Float tourDuration, String tourBullets, String tourKeywords, Integer tourPackageCode,
-			TourPackage tourPackage, Difficulty tourDifficulty, Region tourRegion) {
+	public Tour(String tourTitle, String tourDesc, String tourBlurb, Double tourPrice, String tourDuration,
+			String tourBullets, String tourKeywords, String tourPackageCode, TourPackage tourPackage,
+			Difficulty tourDifficulty, Region tourRegion) {
 		super();
-		this.tourId = tourId;
 		this.tourTitle = tourTitle;
 		this.tourDesc = tourDesc;
 		this.tourBlurb = tourBlurb;
@@ -113,23 +111,6 @@ public class Tour implements Serializable {
 	 */
 	public Tour() {
 		super();
-	}
-
-	public Tour(Integer tourId, String tourTitle, String tourDesc, String tourBlurb, Double tourPrice,
-			Float tourDuration, String tourBullets, String tourKeywords, Integer tourPackageCode,
-			Optional<TourPackage> tourPackage, Difficulty tourDifficulty, Region tourRegion) {
-		// TODO Auto-generated constructor stub
-		this.tourId = tourId;
-		this.tourTitle = tourTitle;
-		this.tourDesc = tourDesc;
-		this.tourBlurb = tourBlurb;
-		this.tourPrice = tourPrice;
-		this.tourDuration = tourDuration;
-		this.tourBullets = tourBullets;
-		this.tourKeywords = tourKeywords;
-		this.tourPackageCode = tourPackageCode;
-		this.tourDifficulty = tourDifficulty;
-		this.tourRegion = tourRegion;
 	}
 
 	/**
