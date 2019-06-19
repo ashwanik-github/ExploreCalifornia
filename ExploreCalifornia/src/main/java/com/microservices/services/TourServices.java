@@ -56,7 +56,7 @@ public class TourServices {
 	 * @param tourDuration    the tour duration
 	 * @param tourBullets     the tour bullets
 	 * @param tourKeywords    the tour keywords
-	 * @param tourPackageCode the tour package code
+	 * @param tourPackageName the tour package name
 	 * @param tourDifficulty  the tour difficulty
 	 * @param tourRegion      the tour region
 	 * @return the tour
@@ -64,7 +64,7 @@ public class TourServices {
 	public Tour createTour(String tourTitle, String tourDesc, String tourBlurb, Double tourPrice, String tourDuration,
 			String tourBullets, String tourKeywords, String tourPackageName, Difficulty tourDifficulty,
 			Region tourRegion) {
-		TourPackage tourPackage = tourPackageRepo.findByName(tourPackageName);
+		TourPackage tourPackage = tourPackageRepo.findByPackageName(tourPackageName);
 		if (tourPackage == null) {
 			throw new RuntimeException("The TourPackage doesn't exists: " + tourPackageName);
 		}

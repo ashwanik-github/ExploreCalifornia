@@ -15,13 +15,19 @@ import lombok.Data;
  * The Class TourPackage.
  */
 @Entity
+
+/**
+ * To string.
+ *
+ * @return the java.lang. string
+ */
 @Data
 public class TourPackage implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 3218476911849837341L;
 
-	/** The package code. */
+	/** The tour package code. */
 	@Id
 	private String tourPackageCode;
 
@@ -32,8 +38,8 @@ public class TourPackage implements Serializable {
 	/**
 	 * Instantiates a new tour package.
 	 *
-	 * @param packageCode the package code
-	 * @param packageName the package name
+	 * @param tourPackageCode the tour package code
+	 * @param packageName     the package name
 	 */
 	public TourPackage(String tourPackageCode, String packageName) {
 		super();

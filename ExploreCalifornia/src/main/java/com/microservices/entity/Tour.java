@@ -18,6 +18,12 @@ import lombok.Data;
  * The Class Tour.
  */
 @Entity
+
+/**
+ * To string.
+ *
+ * @return the java.lang. string
+ */
 @Data
 public class Tour implements Serializable {
 
@@ -62,7 +68,7 @@ public class Tour implements Serializable {
 	private String tourPackageCode;
 
 	/** The tour package. */
-	@ManyToOne
+	@ManyToOne(targetEntity = TourPackage.class)
 	private TourPackage tourPackage;
 
 	/** The tour difficulty. */
@@ -76,7 +82,6 @@ public class Tour implements Serializable {
 	/**
 	 * Instantiates a new tour.
 	 *
-	 * @param tourId          the tour id
 	 * @param tourTitle       the tour title
 	 * @param tourDesc        the tour desc
 	 * @param tourBlurb       the tour blurb
@@ -85,7 +90,7 @@ public class Tour implements Serializable {
 	 * @param tourBullets     the tour bullets
 	 * @param tourKeywords    the tour keywords
 	 * @param tourPackageCode the tour package code
-	 * @param tourPackage2    the tour package
+	 * @param tourPackage     the tour package
 	 * @param tourDifficulty  the tour difficulty
 	 * @param tourRegion      the tour region
 	 */

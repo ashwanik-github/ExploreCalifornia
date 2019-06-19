@@ -10,10 +10,13 @@ public enum Difficulty {
 
 	/** The Easy. */
 	Easy,
+	
 	/** The Medium. */
 	Medium,
+	
 	/** The Difficult. */
 	Difficult,
+	
 	/** The Varies. */
 	Varies;
 }

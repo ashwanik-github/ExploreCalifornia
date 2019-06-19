@@ -75,12 +75,27 @@ public class ExploreCaliforniaApplication implements CommandLineRunner {
 	}
 
 	// creating the Helper class for reading the files from the file and doing
+	/**
+	 * The Class TourFromFile.
+	 */
 	// marshall and unmarshalling
 	static class TourFromFile {
+		
+		/** The keywords. */
 		private String title, blurb, description, bullets, difficulty, price, region, keywords;
+		
+		/** The length. */
 		String length;
+		
+		/** The package type. */
 		private String packageType;
 
+		/**
+		 * Import tours.
+		 *
+		 * @return the list
+		 * @throws IOException Signals that an I/O exception has occurred.
+		 */
 		// defining the method here for reading the file
 		static List<TourFromFile> importTours() throws IOException {
 			return new ObjectMapper().setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY).readValue(

@@ -10,11 +10,13 @@ public enum Region {
 
 	/** The Central coast. */
 	Central_Coast("Central Coast"),
+	
 	/** The Southern california. */
 	Southern_California("Southern California"),
 
 	/** The Northern california. */
 	Northern_California("Northern_California"),
+	
 	/** The Varies. */
 	Varies("Varies");
 

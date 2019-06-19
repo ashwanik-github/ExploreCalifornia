@@ -46,7 +46,7 @@ public class TourPackageServices {
 	}
 
 	/**
-	 * Look up all.
+	 * Look up packages.
 	 *
 	 * @return the iterable
 	 */
